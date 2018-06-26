@@ -15,7 +15,14 @@ export class CubeComponent implements OnInit {
   constructor() {
     this.cube = new Cube();
     this.cube.generateState();
-    console.log(this.cube.matrix);
+    console.log(this.cube.matrix[0].map);
+    this.cube.matrix[0].showConsole();
+    this.cube.matrix[0].moveLeft();
+    this.cube.matrix[0].showConsole();
+    console.log(this.cube.matrix[0].map);
+    // this.cube.matrix[0].moveRight();
+    // this.cube.matrix[0].showConsole();
+    // this.cube.matrix[1].showConsole();
   }
 
   ngOnInit() {

@@ -1,16 +1,14 @@
 import {Side} from "./side";
 
 export class Cube {
-  rows: number;
-  columns: number;
+  size: number;
 
   sides: number = 6;
 
-  matrix: object = {};
+  matrix = {};
 
   constructor() {
-    this.rows = 3;
-    this.columns = 3;
+    this.size = 3;
   }
 
   moveRow(row: number) {
@@ -24,9 +22,17 @@ export class Cube {
   generateState() {
     this.matrix = {};
     for (let side = 0; side < this.sides; side++) {
-      this.matrix[side] = new Side(this.rows, this.columns);
+      this.matrix[side] = new Side(this.size, side)
     }
   }
+
+  // showSide(side: number) {
+  //   this.getSide(side).showConsole();
+  // }
+  //
+  // getSide(side: number): Side {
+  //   return this.matrix[side]
+  // }
 
 
 }
